@@ -1,1 +1,1 @@
-# 5th-WebFront-Juseok
+안녕하세요, DEPth 5기 웹-프론트 파트 이주석입니다.
