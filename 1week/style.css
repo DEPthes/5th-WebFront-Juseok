@@ -1,0 +1,239 @@
+﻿@font-face {
+  font-family: "HS SanTokki 2.0";
+  src: url("./assets/HSSanTokki2.0(2024).ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --bg: #fbfbfd;
+  --panel: #a8b9e0;
+  --accent: #fef5a2;
+  --white: #fffcf7;
+  --font-base: "Gmarket Sans", "GmarketSans", sans-serif;
+  --font-hs: "HS SanTokki 2.0", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-base);
+
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 390px;
+  min-height: 1190px;
+  background: var(--bg);
+}
+
+.top-nav {
+  height: 64px;
+  background: var(--panel);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+.top-nav__title {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-hs);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.top-nav__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12.75px;
+}
+
+.top-nav__saero,
+.top-nav__arrow,
+.main-content__banner-image,
+.artist__poster,
+.footer__icon img {
+  display: block;
+}
+
+.main-content__banner {
+  position: relative;
+}
+
+.main-content__banner-image {
+  width: 100%;
+}
+
+.notice {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notice__button {
+  width: 358px;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--panel);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.notice__button:hover {
+  box-shadow: 0 6px 14px rgba(46, 63, 99, 0.28);
+}
+
+.notice__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f6f8ff;
+  font-size: 16px;
+}
+
+.artist {
+  height: 627px;
+}
+
+.artist__poster {
+  width: calc(100% - 76px);
+  margin: 30px 38px 0;
+}
+
+.artist-card {
+  width: 358px;
+  height: 141px;
+  margin: 30px auto 0;
+  background: var(--panel);
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-card__corner {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+}
+
+.artist-card__corner--tl {
+  top: 16px;
+  left: 16px;
+}
+
+.artist-card__corner--tr {
+  top: 16px;
+  right: 16px;
+
+  transform: rotate(90deg);
+}
+
+.artist-card__corner--bl {
+  left: 16px;
+  bottom: 16px;
+  transform: rotate(270deg);
+}
+
+.artist-card__corner--br {
+  right: 16px;
+  bottom: 16px;
+  transform: rotate(180deg);
+}
+
+.artist-card__day {
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.artist-card__divider {
+  width: 326px;
+  height: 2px;
+  margin: 15px 16px 15px 16px;
+}
+
+.artist-card__name {
+  color: var(--accent);
+  font-family: var(--font-hs);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.footer {
+  height: 199px;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer__logo-box {
+  width: 60px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__logo {
+  width: 49px;
+  height: 10px;
+}
+
+.footer__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer__icon,
+.footer__icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.footer__icon {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: box-shadow 0.2s ease;
+}
+
+.footer__icon:hover {
+  box-shadow: 0 6px 14px rgba(46, 63, 99, 0.28);
+}
+
+.footer__divider {
+  width: 300px;
+  height: 1px;
+}
+
+.footer__copyright {
+  margin: 0;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.2;
+}
