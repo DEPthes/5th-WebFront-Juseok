@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #f6f6f6;
+  color: #7f7f7f;
+  font-size: 1rem;
+  font-family: "Inter", Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  width: auto;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 520px 416px;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+}
+
+.phone-preview {
+  margin-top: 96px;
+  margin-bottom: 148px;
+  display: block;
+}
+
+.login-area {
+  height: 780px;
+  margin-top: 96px;
+  margin-bottom: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card,
+.join-card {
+  border: 1px solid #cccccc;
+  background: #ffffff;
+}
+
+.login-card {
+  min-height: 559px;
+  padding: 70px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 217px;
+  height: 80px;
+  margin-bottom: 57px;
+}
+
+.login-form {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-box {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d0d5dd;
+  border-radius: 999px;
+  padding: 0 20px;
+}
+
+.input-box:focus-within {
+  border-color: #b2b2b2;
+}
+
+.input-box input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  font-weight: 500;
+  background: transparent;
+}
+
+.login-button,
+.kakao-button {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.login-button {
+  margin-top: 10px;
+  background: #b2ddff;
+  color: #ffffff;
+  cursor: default;
+  pointer-events: none;
+}
+
+.login-form:has(input[type="text"]:not(:placeholder-shown)):has(input[type="password"]:not(:placeholder-shown)) .login-button {
+  background: #2e90fa;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.divider {
+  width: 100%;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.kakao-button {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: #f8d706;
+  color: #2F1B1A;
+}
+
+.password-link {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.join-card {
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-card a,
+.login-card .password-link:hover,
+.login-card .password-link:focus-visible {
+  color: #2e90fa;
+}
+
+.login-card .password-link:hover,
+.login-card .password-link:focus-visible,
+.join-card a:hover,
+.join-card a:focus-visible {
+  text-decoration-line: underline;
+  text-decoration-color: #2e90fa;
+}
+
+.download-area {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.download-area p {
+  margin: 0 0 10px;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.store-buttons button {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .page {
+    width: 416px;
+    grid-template-columns: 1fr;
+    padding: 24px 0;
+  }
+
+  .phone-preview {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .login-card {
+    min-height: auto;
+  }
+
+  .login-area {
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
