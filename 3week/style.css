@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "LABDigital";
+  src:
+    url("./assets/LAB디지털.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --digital-font: "LABDigital", "Courier New", Consolas, monospace;
+  --mju-navy: #002d65;
+  --mju-white: #ffffff;
+  --mju-blue: #028fd5;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--mju-white);
+  color: var(--mju-navy);
+}
+
+button {
+  font: inherit;
+}
+
+.calculator-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.calculator {
+  width: min(100%, 460px);
+  height: min(760px, calc(100dvh - 36px));
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(20px, 5vw, 34px);
+  border: 0;
+  border-radius: 26px;
+  background: var(--mju-navy);
+  box-shadow:
+    18px 18px 36px rgba(0, 43, 80, 0.34),
+    -18px -18px 36px rgba(2, 143, 213, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.16);
+}
+
+.calculator-screen {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 22px 24px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 22px;
+  background: var(--mju-white);
+  box-shadow:
+    inset 8px 8px 16px rgba(0, 45, 101, 0.2),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.92),
+    8px 8px 18px rgba(0, 45, 101, 0.24);
+  text-align: right;
+}
+
+.calculator-history {
+  min-height: 1.25rem;
+  overflow: hidden;
+  color: var(--mju-blue);
+  font-family: var(--digital-font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calculator-display {
+  overflow: hidden;
+  color: var(--mju-navy);
+  font-family: var(--digital-font);
+  font-size: clamp(1.35rem, 5.5vw, 2.75rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.calculator-keypad {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: clamp(14px, 3.4vw, 24px);
+}
+
+.key {
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--mju-white);
+  color: var(--mju-navy);
+  box-shadow:
+    9px 9px 18px rgba(0, 45, 101, 0.32),
+    -9px -9px 18px rgba(2, 143, 213, 0.24),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9);
+  font-family: var(--digital-font);
+  font-size: clamp(1.3rem, 4.4vw, 2rem);
+  font-weight: 400;
+  cursor: pointer;
+  transition:
+    box-shadow 120ms ease,
+    color 120ms ease,
+    transform 120ms ease;
+}
+
+.key:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    11px 12px 20px rgba(0, 45, 101, 0.36),
+    -10px -10px 20px rgba(2, 143, 213, 0.26),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.key:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 7px 7px 14px rgba(0, 45, 101, 0.24),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.92);
+}
+
+.key:focus-visible {
+  outline: 3px solid var(--mju-blue);
+  outline-offset: 4px;
+}
+
+.key-clear {
+  grid-column: span 2;
+}
+
+.key-operator,
+.key-equals {
+  color: var(--mju-navy);
+  text-shadow: none;
+}
+
+.key-operator {
+  background: var(--mju-white);
+}
+
+.key-equals {
+  background: var(--mju-blue);
+  color: var(--mju-white);
+}
+
+.key-clear,
+.key[data-action="delete"] {
+  color: var(--mju-white);
+}
+
+.key-clear {
+  background: var(--mju-blue);
+}
+
+.key[data-action="delete"] {
+  background: var(--mju-blue);
+}
+
+.key-operator:active,
+.key-equals:active {
+  box-shadow:
+    inset 7px 7px 14px rgba(0, 32, 68, 0.34),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.18);
+}
+
+@media (max-height: 560px) {
+  .calculator {
+    min-height: 0;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .calculator-screen {
+    min-height: 88px;
+    padding: 16px;
+  }
+
+  .calculator-keypad {
+    gap: 10px;
+  }
+
+  .key {
+    border-radius: 16px;
+  }
+}
