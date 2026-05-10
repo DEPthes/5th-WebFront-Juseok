@@ -185,7 +185,7 @@ input {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .page {
     width: 416px;
     grid-template-columns: 1fr;
