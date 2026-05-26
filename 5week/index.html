@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPth 5week 날씨 앱</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="title">
+        <h1>DEPth 5week 날씨 앱</h1>
+    </div>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="도시 이름을 입력하세요" spellcheck="false">
+            <button type="button" aria-label="날씨 검색">
+                <img src="assets/search-svgrepo-com.svg" alt="">
+            </button>
+        </div>
+        <p class="message">도시 이름을 입력하고 검색해보세요.</p>
+        <div class="weather-details">
+            <div class="weather">
+                <img src="assets/sun-color-icon.svg" class="weather-icon" alt="">
+                <h1 class="temp">??°C</h1>
+                <h2 class="city">??</h2>
+            </div>
+            <div class="details">
+                <div class="col">
+                    <img src="assets/humidity-svgrepo-com.svg" alt="">
+                    <div>
+                        <p class="humidity">??%</p>
+                        <p>습도</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="assets/wind-svgrepo-com.svg" alt="">
+                    <div>
+                        <p class="wind">?? km/h</p>
+                        <p>풍속</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
