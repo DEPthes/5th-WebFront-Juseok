@@ -1,0 +1,115 @@
+.game {
+  --square-size: clamp(72px, 22vw, 96px);
+  --icon-size: clamp(46px, 14vw, 62px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  min-height: calc(100vh - 40px);
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.game-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+}
+
+.game-info ol {
+  margin: 18px 0 0;
+  padding-left: 28px;
+}
+
+.game-info li {
+  margin: 8px 0;
+}
+
+.game-info button {
+  cursor: pointer;
+}
+
+.reset-button {
+  cursor: pointer;
+  display: block;
+  margin-top: 12px;
+}
+
+.game-board {
+  flex: 0 0 auto;
+}
+
+.board-row {
+  display: flex;
+  width: max-content;
+}
+
+.square {
+  align-items: center;
+  background: #fff;
+  border: 2px solid #999;
+  color: #111;
+  display: flex;
+  flex: 0 0 var(--square-size);
+  height: var(--square-size);
+  justify-content: center;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  width: var(--square-size);
+}
+
+.square-highlight {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  position: relative;
+  z-index: 1;
+}
+
+.square-icon {
+  height: var(--icon-size);
+  stroke-width: 2.5;
+  width: var(--icon-size);
+}
+
+.square-icon-x {
+  color: #2563eb;
+}
+
+.square-icon-o {
+  color: #dc2626;
+}
+
+.square:focus {
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding-top: 40px;
+  }
+
+  .game-info {
+    align-items: center;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .game-info ol {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+@media (max-width: 360px) {
+  .game {
+    --square-size: 64px;
+    --icon-size: 40px;
+  }
+}
