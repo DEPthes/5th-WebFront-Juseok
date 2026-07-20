@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Production builds and local tooling cache
+dist/
+.vite/
+
+# Environment and OS files
+.env.local
+.DS_Store
+
+# TypeScript build metadata
+*.tsbuildinfo

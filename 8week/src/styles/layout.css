@@ -1,0 +1,94 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+}
+.sidebar {
+  position: fixed;
+  width: 242px;
+  height: 100vh;
+  padding: 30px 17px;
+  background: #fff;
+  border-right: 1px solid #edf0f5;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.sidebar nav {
+  display: grid;
+  gap: 6px;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  color: #77829a;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: 0.18s ease;
+}
+.nav-link:hover {
+  color: #3a7afe;
+  background: #f6f8ff;
+}
+.nav-link.active {
+  color: #3a7afe;
+  background: #edf3ff;
+}
+.main-content {
+  flex: 1;
+  margin-left: 242px;
+  min-width: 0;
+}
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 27px 45px 65px;
+}
+.welcome-row,
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+  margin-bottom: 29px;
+}
+.page h1,
+.welcome-row h1 {
+  margin: 0;
+  color: #212c45;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+.button {
+  min-height: 42px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.button:hover {
+  transform: translateY(-1px);
+}
+.primary {
+  background: #3a7afe;
+  box-shadow: 0 7px 15px rgba(58, 122, 254, 0.23);
+  color: #fff;
+}
+.secondary {
+  background: #f2f4f8;
+  color: #5f6c83;
+}
+.danger {
+  color: #fff;
+  background: #ff6063;
+}
