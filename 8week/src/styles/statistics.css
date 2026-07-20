@@ -90,17 +90,10 @@
 .comparison-trend.same {
   color: #8e99ac;
 }
-.spending-card > strong {
-  display: block;
-  margin: 9px 0 19px;
-  color: #28354c;
-  font-size: 26px;
-  letter-spacing: -1px;
-}
 .bar-chart-legend {
   display: flex;
   gap: 13px;
-  margin: -9px 0 13px;
+  margin: 12px 0 10px;
   color: #8a95a8;
   font-size: 11px;
   font-weight: 600;
@@ -122,12 +115,16 @@
   background: #ff6f73;
 }
 .bar-chart {
-  height: 190px;
+  height: 145px;
   display: flex;
   align-items: flex-end;
   gap: 12px;
-  padding-top: 15px;
+  padding-top: 10px;
   border-bottom: 1px solid #e8edf3;
+}
+.statistics-donut-card .chart-layout {
+  min-height: 182px;
+  padding-top: 14px;
 }
 .bar-column {
   height: 100%;

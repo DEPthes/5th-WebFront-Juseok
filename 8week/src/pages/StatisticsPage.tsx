@@ -3,7 +3,6 @@ import { useState, type MouseEvent } from "react";
 import { ExpenseDonut } from "../components/transaction/ExpenseDonut";
 import { EmptyState } from "../components/transaction/EmptyState";
 import { useTransactions } from "../hooks/useTransactions";
-import { useCountUp } from "../hooks/useCountUp";
 import {
   formatMoney,
   getCurrentMonthKey,
@@ -28,8 +27,6 @@ export function StatisticsPage() {
   const monthExpense = expenses.filter((item) =>
     item.date.startsWith(currentMonth),
   );
-  const total = monthExpense.reduce((sum, item) => sum + item.amount, 0);
-  const animatedTotal = useCountUp(total);
   const categoryData = getCategoryTotals(monthExpense);
   const months = getRecentMonths(3);
   const monthlyData = months.map((month) => ({
@@ -96,9 +93,6 @@ export function StatisticsPage() {
         <div className="stats-grid">
           <div className="content-card spending-card">
             <h2>월별 수입·지출</h2>
-            <strong className="expense-text">
-              {formatMoney(animatedTotal)}
-            </strong>
             <div className="bar-chart-legend" aria-label="그래프 범례">
               <span>
                 <i className="income-bar-dot" />
@@ -165,7 +159,7 @@ export function StatisticsPage() {
               ))}
             </div>
           </div>
-          <div className="content-card">
+          <div className="content-card statistics-donut-card">
             <div className="section-title">
               <h2>이번 달 소비 비중</h2>
               <span className="text-link">{getMonthLabel()}</span>
