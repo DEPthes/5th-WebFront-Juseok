@@ -6,6 +6,7 @@ import { isCurrentMonth } from "../utils/format";
 export const useTransactions = () => {
   const [transactions, setTransactions] =
     useState<Transaction[]>(readTransactions);
+  const [isLoading, setIsLoading] = useState(true);
 
   const update = useCallback(
     (updater: (current: Transaction[]) => Transaction[]) => {
@@ -21,15 +22,19 @@ export const useTransactions = () => {
 
   useEffect(() => {
     const syncTransactions = () => setTransactions(readTransactions());
+    const loadingTimer = window.setTimeout(() => setIsLoading(false), 300);
+
     window.addEventListener(
       "balance-note-transactions-updated",
       syncTransactions,
     );
-    return () =>
+    return () => {
+      window.clearTimeout(loadingTimer);
       window.removeEventListener(
         "balance-note-transactions-updated",
         syncTransactions,
       );
+    };
   }, []);
 
   const addTransaction = useCallback(
@@ -90,6 +95,7 @@ export const useTransactions = () => {
 
   return {
     transactions,
+    isLoading,
     monthlyTransactions,
     summary,
     addTransaction,

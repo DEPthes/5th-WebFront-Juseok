@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ExpenseDonut } from "../components/transaction/ExpenseDonut";
 import { EmptyState } from "../components/transaction/EmptyState";
 import { TransactionItem } from "../components/transaction/TransactionItem";
+import { TransactionSkeleton } from "../components/transaction/TransactionSkeleton";
 import { useTransactions } from "../hooks/useTransactions";
 import { useCountUp } from "../hooks/useCountUp";
 import { formatMoney, getMonthLabel } from "../utils/format";
@@ -12,7 +13,8 @@ import {
 } from "../utils/transactions";
 
 export function DashboardPage() {
-  const { monthlyTransactions, summary, transactions } = useTransactions();
+  const { monthlyTransactions, summary, transactions, isLoading } =
+    useTransactions();
   const animatedBalance = useCountUp(summary.balance);
   const animatedIncome = useCountUp(summary.income);
   const animatedExpense = useCountUp(summary.expense);
@@ -53,7 +55,9 @@ export function DashboardPage() {
               전체보기 <ArrowRight size={14} />
             </Link>
           </div>
-          {recentTransactions.length ? (
+          {isLoading ? (
+            <TransactionSkeleton compact />
+          ) : recentTransactions.length ? (
             <div className="transaction-list">
               {recentTransactions.map((transaction) => (
                 <TransactionItem

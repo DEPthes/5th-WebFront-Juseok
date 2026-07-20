@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUp, Search } from "lucide-react";
 import { ConfirmModal } from "../components/transaction/ConfirmModal";
 import { EmptyState } from "../components/transaction/EmptyState";
 import { TransactionItem } from "../components/transaction/TransactionItem";
+import { TransactionSkeleton } from "../components/transaction/TransactionSkeleton";
 import { useTransactions } from "../hooks/useTransactions";
 import { useTransactionModal } from "../hooks/useTransactionModal";
 import type { Transaction, TransactionType } from "../types/transaction";
@@ -15,7 +16,7 @@ type Filter = "all" | TransactionType;
 type DateOrder = TransactionSortOrder;
 
 export function TransactionsPage() {
-  const { transactions, deleteTransaction } = useTransactions();
+  const { transactions, deleteTransaction, isLoading } = useTransactions();
   const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
   const [dateOrder, setDateOrder] = useState<DateOrder>("desc");
@@ -94,7 +95,9 @@ export function TransactionsPage() {
             )}
           </button>
         </div>
-        {filtered.length ? (
+        {isLoading ? (
+          <TransactionSkeleton />
+        ) : filtered.length ? (
           <div className="transaction-list">
             {filtered.map((item) => (
               <TransactionItem
